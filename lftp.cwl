@@ -30,6 +30,19 @@ inputs:
     doc: "The parameters file for lftp"
     inputBinding:
       position: 1
+  - id: lftp_out_private_key
+    type: File
+    doc: "private key"
+    inputBinding:
+      position: 2
+- id: lftp_out_public_key
+    type: File
+    doc: "public key"
+    inputBinding:
+      position: 3
+- id: lftp_out_secret
+    type: string
+    position: 4
   - id: files_to_send
     type:
       type: array
@@ -51,4 +64,3 @@ outputs:
 
 baseCommand: ["lftp"]
 arguments: ["-f"]
- 
