@@ -23,7 +23,13 @@ inputs:
     type: string
   - id: lftp_out_conf
     type: File
-
+  - id: lftp_out_private_key
+    type: File
+  - id: lftp_out_public_key
+    type: File
+  - id: lftp_out_secret
+    type: string
+    
 outputs: []
 
 steps:
@@ -277,6 +283,12 @@ steps:
       - id: gvcf
         source:      
           - gatk_haplotype_caller/gvcf
+      - id: lftp_out_private_key
+        source: lftp_out_private_key
+      - id: lftp_out_public_key
+        source: lftp_out_public_key
+      - id: lftp_out_secret
+        source: lftp_out_secret
     out: []
     run: lftp.cwl
 
